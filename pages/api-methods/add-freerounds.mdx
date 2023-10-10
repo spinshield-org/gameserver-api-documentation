@@ -1,0 +1,49 @@
+# addFreeRounds Method
+This method adds free spins to player. If player is already playing on the slotmachine, it will start the free rounds on the next available spin/init.
+
+Please note that exact bet amount cannot be set instead this is specified as bet level. Bet level can be set from 0 to max 6. If you want to see the exact bet amount, credit yourself free spins and check in the game.
+
+It is possible that bet levels and it's corresponding bet amounts do change over time. After the first free spin has been played, the exact bet amount will be updated on the free spins session.
+
+If player already has an active free spins session on the specific slotmachine, the free spins are added on top of the already existing slot machine and the validity date is extended.
+
+Important: `bet_level` can not be updated on yet active sessions. So if you use different `bet_level` free spins it's safest to split these per slotmachine you give these free spins on to not have any overlap.
+
+
+### Method Request
+```json
+{
+  "api_login" : "d13b1ceb-6209-4163-b1cf-f304c28b81ec",
+  "api_password": "dqRin2nfLosij2n88",
+  "method": "addFreeRounds",
+  "gameid": "softswiss/LuckyCrew", 
+  "freespins": 12,
+  "bet_level": 0,
+  "valid_days": 7,
+  "user_username": "yourPlayerId9959", 
+  "user_password": "superSecretPlayerPassword",
+  "currency": "USD"
+}
+```
+
+### Succesful Response
+```json
+{
+  "error": 0,
+  "response": {
+    "id": 7,
+    "player_id": 57,
+    "game_id": "softswiss\/LuckyCrew",
+    "freespins": 12,
+    "freespins_wallet": 0,
+    "freespins_performed": 0,
+    "bet_level": 0,
+    "currency": "USD",
+    "operator_id": 4,
+    "valid_until": "2023-10-17T12:19:16.700332Z",
+    "created_at": "2023-10-10T12:19:16.700360Z",
+    "updated_at": "2023-10-10T12:19:16.700363Z",
+    "active": true
+  }
+}
+```

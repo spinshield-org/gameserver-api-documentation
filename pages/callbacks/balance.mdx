@@ -1,0 +1,43 @@
+# Callback Action: balance
+This callback will be sent to your callback URL, specified within the [backoffice]('/backoffice'). We will send this callback at start of game. You should always return balance on integer format.
+
+The call_id is a unique id sent with each callback and can be considered the transaction id.
+
+### Callback Request
+```json
+{
+  "username": "yourPlayerId9959",
+  "currency": "USD",
+  "action": "balance",
+  "gamesession_id": "390d5c800eee4782b3b1bd0169d5213199e72a3d76d3dbb4ae03dc7b9bbdb6c6faba19e1a8a49953ce1bcbb72ec68ab98275063a81859bc40934f798649c6d04",
+  "session_id": "338e7afbfc0a04c9383e86c198819009",
+  "call_id": "e2b801a1-e098-411c-8940-00514cb8070c",
+  "remote_id": "32",
+  "timestamp": "1696463571",
+  "key": "6c4e5fd14e796284b327bb4f9603aee4"
+}
+```
+
+### Succesful Response:
+```json
+  {
+    "error": 0,
+    "balance": 500
+  }
+```
+
+### Insufficient Balance
+```json
+  {
+    "error": 1,
+    "balance": 500
+  }
+```
+
+### Processing Error (for example player not found or invalid signature)
+```json
+  {
+    "error": 2,
+    "balance": 0
+  }
+```

@@ -1,0 +1,44 @@
+# getFreeRounds Method
+This method returns all free rounds history for given player.
+
+The `freespins_bet` is updated after the first freespin has commenced, before it is set to 0.
+The `freespins_wallet` is total win amount.
+
+Once `freespins_performed` amount is same as `freespins` amount and `active` is set to `false` you can consider the bonus completed.
+
+### Method Request
+```json
+{
+  "api_login" : "d13b1ceb-6209-4163-b1cf-f304c28b81ec",
+  "api_password": "dqRin2nfLosij2n88",
+  "method": "getFreeRounds",
+  "user_username": "yourPlayerId9959", 
+  "user_password" : "superSecretPlayerPassword",
+  "currency": "USD"
+}
+```
+
+### Succesful Response
+```json
+{
+	"error": 0,
+	"response": [
+	{
+		"id": 7,
+		"game_id": "softswiss/LuckyCrew",
+		"currency": "USD",
+		"player_id": 57,
+		"freespins": 48,
+		"freespins_bet": 0,
+		"freespins_wallet": 0,
+		"freespins_performed": 0,
+		"bet_level": 0,
+		"extra_data": null,
+		"active": true,
+		"operator_id": 4,
+		"valid_until": "2023-10-17 12:19:16",
+		"created_at": "2023-10-10 12:19:16"
+	}
+	]
+}
+```

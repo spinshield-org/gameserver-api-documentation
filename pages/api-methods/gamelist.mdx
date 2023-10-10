@@ -1,0 +1,114 @@
+# getGameList Method
+This method returns all available games.
+
+You should always use the `id_hash` variable when opening game using the [getGame method]('/api-methods/get-game').
+
+Games that are eligible for the [addFreeRounds method]('/api-methods/add-freerounds') are returned as `freerounds_supported: true`.
+
+### Method Request
+```json
+{
+  "api_login" : "d13b1ceb-6209-4163-b1cf-f304c28b81ec",
+  "api_password": "dqRin2nfLosij2n88",
+  "method": "getGameList",
+  "show_additional": true, 
+  "show_systems" : 0,
+  "list_type" : 1,
+  "currency": "USD"
+}
+```
+
+
+### Succesful Response (list_type: 1)
+```json
+{
+  "error": 0,
+  "response": [
+    {
+      "id": 483,
+      "name": "Fruits On Ice Collection 40 Lines",
+      "type": "video-slots",
+      "category": "spinomenal",
+      "subcategory": "video-slots",
+      "details": [],
+      "new": false,
+      "mobile": true,
+      "id_hash": "spinomenal/FruitsOnIceCollection40Lines",
+      "id_hash_parent": "spinomenal/FruitsOnIceCollection40Lines",
+      "freerounds_supported": false,
+      "featurebuy_supported": false,
+      "has_jackpot": false,
+      "play_for_fun_supported": true,
+      "image": "https://cdn2.softswiss.net/bets/i/s3/spinomenal/FruitsOnIceCollection40Lines.webp",
+      "image_square": "https://cdn2.softswiss.net/bets/i/s3/spinomenal/FruitsOnIceCollection40Lines.webp",
+      "image_portrait": "https://cdn2.softswiss.net/bets/i/s4/spinomenal/FruitsOnIceCollection40Lines.webp",
+      "image_filled": "https://cdn2.softswiss.net/bets/i/s2/spinomenal/FruitsOnIceCollection40Lines.webp",
+      "image_long": "https://thumbnail.cdn.mercurycdn.com/portrait/spinomenal/FruitsOnIceCollection40Lines.jpg",
+      "image_background": "https://cdn2.softswiss.net/bets/i/s1/spinomenal/FruitsOnIceCollection40Lines.webp",
+      "image_bw": "https://cdn2.softswiss.net/bets/i/s1/spinomenal/FruitsOnIceCollection40Lines.webp",
+      "currency": "USD"
+    },
+    {
+      "id": 20,
+      "name": "Wild Chicago",
+      "type": "video-slots",
+      "category": "bgaming",
+      "subcategory": "video-slots",
+      "details": [],
+      "new": false,
+      "mobile": true,
+      "id_hash": "softswiss/WildChicago",
+      "id_hash_parent": "softswiss/WildChicago",
+      "freerounds_supported": false,
+      "featurebuy_supported": false,
+      "has_jackpot": false,
+      "play_for_fun_supported": true,
+      "image": "https://cdn2.softswiss.net/bets/i/s3/softswiss/WildChicago.webp",
+      "image_square": "https://cdn2.softswiss.net/bets/i/s3/softswiss/WildChicago.webp",
+      "image_portrait": "https://cdn2.softswiss.net/bets/i/s4/softswiss/WildChicago.webp",
+      "image_filled": "https://cdn2.softswiss.net/bets/i/s2/softswiss/WildChicago.webp",
+      "image_long": "https://thumbnail.cdn.mercurycdn.com/portrait/softswiss/WildChicago.jpg",
+      "image_background": "https://cdn2.softswiss.net/bets/i/s1/softswiss/WildChicago.webp",
+      "image_bw": "https://cdn2.softswiss.net/bets/i/s1/softswiss/WildChicago.webp",
+      "currency": "USD"
+    }
+  ]
+}
+```
+
+
+### Succesful Response (list_type: 2)
+```json
+{
+	"error": 0,
+	"response": [
+		{
+			"n": "Dice Bonanza",
+			"p": "bgaming",
+			"s": "softswiss/DiceBonanza",
+			"fs": false,
+			"fb": false,
+			"d": true,
+			"id": 41
+		},
+		{
+			"n": "Luck & Magic",
+			"p": "bgaming",
+			"s": "softswiss/LuckAndMagic",
+			"fs": false,
+			"fb": false,
+			"d": true,
+			"id": 40
+		},
+		{
+			"n": "Hit The Route",
+			"p": "bgaming",
+			"s": "softswiss/HitTheRoute",
+			"fs": true,
+			"fb": false,
+			"d": true,
+			"id": 39
+		}
+  ]
+}
+```

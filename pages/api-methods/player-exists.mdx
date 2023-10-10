@@ -1,0 +1,37 @@
+# playerExists Method
+This method is deprecated to invoke directly, instead just call [createPlayer method]('/api-methods/create-player'). If the player already exists, it automatically redirects the method request to this method.
+
+
+### Method Request
+```json
+{
+  "api_login" : "d13b1ceb-6209-4163-b1cf-f304c28b81ec",
+  "api_password": "dqRin2nfLosij2n88",
+  "method": "playerExists",
+  "user_username": "yourPlayerId9959", 
+  "currency": "USD"
+}
+```
+
+
+### Succesful Response
+```json
+{
+	"error": 0,
+	"response": {
+		"id": 53,
+		"username": "yourPlayerId9959",
+		"balance": "0.00",
+		"created": "2023-10-10T11:48:39.000000Z",
+		"agent_balance": null
+	}
+}
+```
+
+### Player Not Found Response
+```json
+{
+	"error": 1,
+	"message": "Player does not exist"
+}
+```

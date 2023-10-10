@@ -1,0 +1,40 @@
+# getGame Method
+This methods opens game session and returns the game URL that you should serve to your players. 
+
+You should always invoke the [createPlayer method]('/api-methods/create-player') before using this method to ensure player exists.
+
+On gameid you should always use the `id_hash` variable returned on the [getGameList method]('/api-methods/gamelist').
+
+### Method Request
+```json
+{
+  "api_login" : "d13b1ceb-6209-4163-b1cf-f304c28b81ec",
+  "api_password": "dqRin2nfLosij2n88",
+  "method": "getGame",
+  "lang" : "en",
+  "user_username": "yourPlayerId9959", 
+  "user_password" : "superSecretPlayerPassword",
+  "gameid" : "softswiss/DiceBonanza", 
+  "homeurl" : "https://url.to.your.page.com",
+  "cashierurl" : "https://url.to.cashier.page.com",
+  "play_for_fun" : 0, 
+  "currency": "USD"
+}
+```
+
+### Succesful Response
+```json
+{
+  "error": 0,
+  "response": "https://client-mga.spinshield.net/i?play=aHR0cHM6Ly9jbGllbnQtbWdhLnNwaW5zaGllbGQubmV0L3BsYXkvOGI1NGVkZjRmMWQ0YzNlZmRhZmQ5MGU1ZmQ5MmM5OWQvMzcxOTgyMy9zb2Z0c3dpc3MvRGljZUJvbmFuemE=",
+  "session_id": "8b54edf4f1d4c3efdafd90e5fd92c99d"
+}
+```
+
+### Error Response
+```json
+{
+	"error": 1,
+	"message": "Game with this gameid does not exist"
+}
+```

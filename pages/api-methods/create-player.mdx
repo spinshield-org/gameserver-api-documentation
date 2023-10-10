@@ -1,0 +1,32 @@
+# createPlayer Method
+The createPlayer method should be invoked before sending other requests. For safe integration you should always call this, even if you already created player before.
+
+If the player exists already, we redirect your request to the [playerExists method]('/api-methods/player-exists').
+
+### Method Request
+```json
+{
+	"api_login" : "d13b1ceb-6209-4163-b1cf-f304c28b81ec",
+	"api_password": "dqRin2nfLosij2n88",
+	"method": "createPlayer",
+	"user_username": "yourPlayerId9959", 
+	"user_password" : "superSecretPlayerPassword",
+	"currency": "USD"
+}
+```
+
+### Succesful Response
+```json
+{
+	"error": 0,
+	"response": {
+		"id": 51,
+		"username": "yourPlayerId9959",
+		"balance": "0.00",
+		"currencycode": "USD",
+		"created": "2023-10-10T11:44:22.000000Z",
+		"agent_balance": null
+	}
+}
+```
+
