@@ -5,12 +5,12 @@ The key is constructed by the `timestamp` variable + salt_key. The salt key is u
 
 The key is constructed as following:
 
-### Javascript:
+### Key Construct (Javascript)
 ```js
 md5($timestamp + $saltkey);
 ```
 
-### PHP:
+### Key Construct (PHP)
 ```php
 md5($timestamp.$saltkey);
 ```

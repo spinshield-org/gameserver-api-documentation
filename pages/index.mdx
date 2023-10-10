@@ -23,7 +23,7 @@ Our game server sends GET requests to your callback URL and always expects a JSO
 All balance must be returned as integer and in cents, that means if your player's balance is `2.50$` this should be returned as `250`.
 
 
-### Succesful Transaction:
+### Succesful Response
 ```json
   {
     "error": 0,
@@ -31,7 +31,7 @@ All balance must be returned as integer and in cents, that means if your player'
   }
 ```
 
-### Insufficient Balance:
+### Insufficient Balance Response
 ```json
   {
     "error": 1,
@@ -39,7 +39,7 @@ All balance must be returned as integer and in cents, that means if your player'
   }
 ```
 
-### Processing Error (for example player not found or invalid signature):
+### Processing Error (for example player not found or invalid signature) Response
 ```json
   {
     "error": 2,
