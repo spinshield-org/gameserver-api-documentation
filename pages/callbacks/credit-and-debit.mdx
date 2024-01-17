@@ -1,7 +1,7 @@
 # Callback Action: debit/credit
 Depending on the callback action you should credit/debit your player's balance for the `amount` given on callback. 
 
-You should always check if player's balance is the same or greater then the `balance_required` variable. If it is not, you should return the insufficient balance response (error: 1) like shown below.
+If player does not have enough balance on debit action, you should return the insufficient balance response (error: 1) like shown below.
 
 The call_id is a unique id sent with each callback and can be considered the transaction id.
 
