@@ -9,11 +9,11 @@ const config: DocsThemeConfig = {
   footer: {
     text: 'Games API',
   },
-}
-useNextSeoProps() {
-return {
-  titleTemplate: '%s – Gameserver API Documentation'
-}
+  useNextSeoProps() {
+  return {
+    titleTemplate: '%s – Gameserver API Documentation'
+   }
+  },
 }
 
 export default config
