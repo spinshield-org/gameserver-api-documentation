@@ -10,5 +10,10 @@ const config: DocsThemeConfig = {
     text: 'Games API',
   },
 }
+useNextSeoProps() {
+return {
+  titleTemplate: '%s – Gameserver API Documentation'
+}
+}
 
 export default config
