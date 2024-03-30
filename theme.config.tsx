@@ -4,7 +4,7 @@ import { DocsThemeConfig } from 'nextra-theme-docs'
 const config: DocsThemeConfig = {
   logo: <span>Games API</span>,
   chat: {
-    link: 'https://t.me/ryanwest777',
+    link: 'https://t.me/wrccwest',
   },
   footer: {
     text: 'Games API',
