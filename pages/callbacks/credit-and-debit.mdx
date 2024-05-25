@@ -6,6 +6,7 @@ If player does not have enough balance on debit action, you should return the in
 The call_id is a unique id sent with each callback and can be considered the transaction id.
 
 ## Requests
+Requests are sent as `GET` to your callback url, specified on your API key.
 ### Spin Callback
 ```json
 {
@@ -55,8 +56,8 @@ This callback is sent when player is playing on gifted free rounds, after using 
 }
 ```
 
-
 ## Responses
+Balance must be returned as integer and in cents, that means if your player's balance is `2.50$` this should be returned as `250`.
 ### Succesful Response
 ```json
   {
