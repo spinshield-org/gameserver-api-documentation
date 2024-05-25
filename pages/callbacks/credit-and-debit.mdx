@@ -7,6 +7,7 @@ The call_id is a unique id sent with each callback and can be considered the tra
 
 ## Requests
 Requests are sent as `GET` to your callback url, specified on your API key.
+
 ### Spin Callback
 ```json
 {
@@ -30,6 +31,7 @@ Requests are sent as `GET` to your callback url, specified on your API key.
 
 ### Free Round Spin Callback
 This callback is sent when player is playing on gifted free rounds, after using the [addFreeRounds method](/api-methods/add-freerounds).
+
 **You should not deduct a player's balance on debit callbacks when `type` variable is set to `bonus_fs`.**
 ```json
 {
