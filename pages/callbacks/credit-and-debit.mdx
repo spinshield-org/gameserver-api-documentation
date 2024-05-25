@@ -5,7 +5,9 @@ If player does not have enough balance on debit action, you should return the in
 
 The call_id is a unique id sent with each callback and can be considered the transaction id.
 
-### Callback Request
+## Requests
+
+### Spin Callback Request
 ```json
 {
   "amount": 100,
@@ -26,7 +28,39 @@ The call_id is a unique id sent with each callback and can be considered the tra
 }
 ```
 
-### Succesful Response:
+### Free Round Spin Callback Request
+This callback is sent when player is playing on gifted free rounds, which added with the [addFreeRounds method](/api-methods/add-freerounds).
+
+**You should not deduct a player's balance on debit callbacks when `type` variable is set to `bonus_fs`.**
+
+```json
+{
+  "amount": 25,
+  "balance_required": 0,
+  "currency": "CAD",
+  "action": "debit",
+  "gameplay_final": 0,
+  "gamesession_id": "bff5583a93164d0ad824de9a529836d2",
+  "type": "bonus_fs",
+  "round_id": "1074911949",
+  "session_id": "bff5583a93164d0ad824de9a529836d2",
+  "game_id": "platipus/luckycat",
+  "username": "wmlmhohuhfs",
+  "call_id": "6ce7154b-be61-4bab-b5a6-642488064c41",
+  "remote_id": "52874",
+  "operator_id": 24,
+  "timestamp": "1696463565",
+  "key": "ed3a34c119wec67fb8e37691b5885f0",
+  "freespins": {
+      "total": 20,
+      "performed": 3
+  }
+}
+```
+
+## Responses
+
+### Succesful Response
 ```json
   {
     "error": 0,
