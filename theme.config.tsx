@@ -12,7 +12,6 @@ const config: DocsThemeConfig = {
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content="Games API Documentation" />
       <meta property="og:description" content="Documentation for the Games API"" />
       <meta property="description" content="Documentation for the Games API" />
     </>
