@@ -12,6 +12,8 @@ There are cases where a `credit` callback can be sent withoyut first sending a `
 
 In some game providers there may be occurances where new `round_id` is made for each consecutive action on the slotmachine, for example when bonus game won on some providers this might be sent as individual game rounds and will thus only send `credit` action. 
 
+This may also affect `gameplay_final` in particular cases.
+
 ## Requests
 Requests are sent as `GET` to your callback url, specified on your API key.
 
