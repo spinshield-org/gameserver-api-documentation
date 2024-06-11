@@ -10,8 +10,6 @@ There are cases where a credit can be sent with prior debit, in case of rollback
 
 Also in some game providers there may be occurances where new `round_id` is made for each consecutive action on the slotmachine, for example when bonus game won on some providers this might be sent up as individual game rounds and only send `credit` actions. 
 
-In such case you can add those won amounts, to the last debit transaction recorded within your system for specific player & game.
-
 ## Requests
 Requests are sent as `GET` to your callback url, specified on your API key.
 
