@@ -6,6 +6,8 @@ If player does not have enough balance on debit action, you should return the in
 The call_id is a unique id sent with each callback and can be considered the transaction id.
 
 ## Important note
+You should allow `credit` action and `debit` action independently of each other.
+
 There are cases where a `credit` callback can be sent with prior `debit` callback, per example in case of rollback/refund system activated.
 
 Also in some game providers there may be occurances where new `round_id` is made for each consecutive action on the slotmachine, for example when bonus game won on some providers this might be sent up as individual game rounds and only send `credit` actions. 
