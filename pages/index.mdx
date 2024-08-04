@@ -22,11 +22,19 @@ Your JSON body content should always include your `api_login` and your `api_pass
   ...
 }
 ```
+
 ## Callback Communication
 Our game server sends `GET` requests to your callback URL and always expects a JSON response that includes error code and player balance. If player balance can not be retrieved for whatever reason, you should return `0` as balance.
 
 All balance must be returned as integer and in cents, that means if your player's balance is `2.50$` this should be returned as `250`.
 
+## Default Game Sequence
+
+### Opening New Real Game Session
+| Sequence        | Action |   Test Text |
+| :------------ | :---------: | ----------: |
+| #1        |    createPlayer    | [action](/i-methods/create-player) |
+| #2        |    getGame    | [action](/i-methods/get-game) |
 
 ### Succesful Response
 ```json
