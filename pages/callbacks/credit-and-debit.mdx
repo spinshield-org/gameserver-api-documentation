@@ -15,7 +15,7 @@ In some game providers there may be occurances where new `round_id` is made on e
 This may also affect `gameplay_final` in particular cases.
 
 ## Requests
-Requests are sent as `GET` to your callback url, specified on your API key.
+Requests are sent as `GET` to your callback url, which is specified on your API key configuration.
 
 ### Spin Callback
 ```json
@@ -24,7 +24,7 @@ Requests are sent as `GET` to your callback url, specified on your API key.
   "username": "yourPlayerId9959",
   "currency": "USD",
   "action": "debit",
-  "gameplay_final": 1,
+  "gameplay_final": 0,
   "type": "spin",
   "round_id": "312875958396",
   "game_id": "onlyplay/LigaFortunaMegaways",
@@ -46,7 +46,6 @@ This callback is sent when player is playing on gifted free rounds, after using 
   "gameplay_final": 0,
   "type": "bonus_fs",
   "round_id": "1074911949",
-  "session_id": "bff5583a93164d0ad824de9a529836d2",
   "game_id": "platipus/luckycat",
   "username": "wmlmhohuhfs",
   "call_id": "6ce7154b-be61-4bab-b5a6-642488064c41",
@@ -66,7 +65,7 @@ Balance must be returned as integer and in cents, that means if your player's ba
 ```json
   {
     "error": 0,
-    "balance": 500
+    "balance": 250
   }
 ```
 
@@ -74,7 +73,7 @@ Balance must be returned as integer and in cents, that means if your player's ba
 ```json
   {
     "error": 1,
-    "balance": 500
+    "balance": 250
   }
 ```
 

@@ -17,7 +17,7 @@ const config: DocsThemeConfig = {
   ),
   useNextSeoProps() {
   return {
-    titleTemplate: '%s – Gameserver API Documentation'
+    titleTemplate: '%s – Games API Documentation'
    }
   },
 }
