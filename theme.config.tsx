@@ -9,6 +9,12 @@ const config: DocsThemeConfig = {
   footer: {
     text: 'Games API',
   },
+  editLink: {
+    text: null,
+  },
+  feedback: {
+    content: null,
+  },
   head: (
     <>
       <meta property="og:description" content="Documentation for the Games API" />
