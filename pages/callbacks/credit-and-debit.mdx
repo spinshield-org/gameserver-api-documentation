@@ -19,7 +19,7 @@ This may also affect `gameplay_final` in rare cases.
 ## Rollbacks
 Any rollback events, which can both be `debit` or `credit` action will be marked under the `rb` variable on our callbacks.
 
-When this variable is `1` it means the sent action is a rollback. The original round_id should be included and you should proceed to either `debit` or `credit` the player's balance like normal.
+When this variable is `1` it means the sent action is a rollback. The original round_id should be included and you should proceed to either `debit` or `credit` the player's balance like you would on a regular callback.
 
 ## Requests
 Requests are sent as `GET` to your callback url, which is specified on your API key configuration.
