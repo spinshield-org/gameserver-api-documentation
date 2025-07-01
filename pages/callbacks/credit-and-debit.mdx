@@ -14,6 +14,11 @@ In some game providers there may be occurances where new `round_id` is made on e
 
 This may also affect `gameplay_final` in particular cases.
 
+## Rollbacks
+Any rollback events, which can both be `debit` or `credit` action will be marked under the `rb` variable on our callbacks.
+
+When this variable is `1` it means the sent action is a rollback. The original round_id should be included and you should proceed to either `debit` or `credit` the player's balance like normal.
+
 ## Requests
 Requests are sent as `GET` to your callback url, which is specified on your API key configuration.
 
@@ -30,6 +35,7 @@ Requests are sent as `GET` to your callback url, which is specified on your API 
   "game_id": "onlyplay/LigaFortunaMegaways",
   "call_id": "f51fce58-2e0e-461b-8a0c-87ecba0600c2",
   "timestamp": "1696463565",
+  "rb": 0,
   "key": "4e54de0b17adf322365c0540bd7db57a"
 }
 ```
@@ -51,6 +57,7 @@ This callback is sent when player is playing on gifted free rounds, after using 
   "call_id": "6ce7154b-be61-4bab-b5a6-642488064c41",
   "operator_id": 24,
   "timestamp": "1696463565",
+  "rb": 0,
   "key": "ed3a34c119wec67fb8e37691b5885f0",
   "freespins": {
       "id": 7,
