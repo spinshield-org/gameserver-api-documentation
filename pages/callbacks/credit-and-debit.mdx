@@ -40,6 +40,24 @@ Requests are sent as `GET` to your callback url, which is specified on your API 
 }
 ```
 
+### Rollback Spin Callback
+```json
+{
+  "amount": 100,
+  "username": "yourPlayerId9959",
+  "currency": "USD",
+  "action": "credit",
+  "gameplay_final": 0,
+  "type": "spin",
+  "round_id": "312875958396",
+  "game_id": "onlyplay/LigaFortunaMegaways",
+  "call_id": "87ecba0600c2-2e0e-461b-8a0c-8a0c2ds",
+  "timestamp": "1696463565",
+  "rb": 1,
+  "key": "ed3a34c119wec67fb8e37691b5885f0"
+}
+```
+
 ### Free Round Spin Callback
 This callback is sent when player is playing on gifted free rounds, after using the [addFreeRounds method](/api-methods/add-freerounds).
 
