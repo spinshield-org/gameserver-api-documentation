@@ -3,23 +3,20 @@ Depending on the callback action you should credit/debit your player's balance f
 
 If player does not have enough balance on `debit` action, you should return the insufficient balance response (error: 1) like shown below.
 
-The call_id is a unique id sent with each callback and can be considered the transaction id.
+The `call_id` is a unique id sent with each callback and can be considered the transaction id.
 
 ## Important note
 You should allow `credit` action and `debit` action independently of each other.
 
 There are rare cases where a `credit` callback can be sent without first sending a `debit` callback, per example in case of rollback/refund system activated.
-In this case if you need tie it to a `debit` action, simply look up the most recent `debit` transaction in your system for the specific player, game & currency and attach the `credit` to that round.
+In this case if you need tie it to a `debit` action, look up the most recent `debit` transaction in your system for specified `username`, `game_id` & `currency` and attach the `credit` to that round ID.
 
-In some game providers there may be rare occurances where new `round_id` is made on each game action.
-For example when bonus game won subsequent spins within the bonus game on some providers might be sent as individual unique game round_id's and will thus only send `credit` action.
-
-This may also affect `gameplay_final` in rare cases.
+In some game providers there may be rare occurances where new `round_id` is made on each game action. This may also affect `gameplay_final` in rare cases.
 
 ## Rollbacks
 Any rollback events, which can both be `debit` or `credit` action will be marked under the `rb` variable on our callbacks.
 
-When this variable is `1` it means the sent action is a rollback. The original round_id should be included and you should proceed to either `debit` or `credit` the player's balance like you would on a regular callback.
+When `rb` is set to `1` it means the action is a rollback. The original round_id should be included and you should proceed to either `debit` or `credit` the player's balance like you would on a regular callback.
 
 ## Requests
 Requests are sent as `GET` to your callback url, which is specified on your API key configuration.
